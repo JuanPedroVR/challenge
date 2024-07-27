@@ -1,0 +1,340 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../views/login.php');
+}
+
+$user_id = $_SESSION['user_id'];
+$user_name = $_SESSION['user_name'];
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="../image/x-icon" href="../imgs/favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css">
+    <title>Compu-Tec</title>
+</head>
+<body>
+    <header>
+    
+    
+        <div class=" text-center vw">
+            <div class="row align-items-center">
+              <div class="col titulo_SS">
+                <h4><a href="../views/inicio.php">Compu-Tec</a></h4>
+              </div>
+              <div class="col ">
+                <a href="../views/inicio.php"><img src="../imgs/favicon.ico" alt="logo_img" style="width: 100px;"></a>
+              </div>
+
+              <div class="col contacto_header">
+
+                <form method="post" action="../controllers/logout.php">
+                  <button type="submit" name="logout">Cerrar sesión</button>
+                </form>
+                <a class="button-49" href="../views/login.php">
+                    <i class="fa fa-user-circle" aria-hidden="true" style="color: white;">
+                    </i>
+                    <?php echo $user_name; ?>
+                    <br>
+                
+                </a>
+
+
+              </div>
+
+              <div class="col navbar_button">
+                <button class="button_show_navbar">
+                  <i class="fa-solid fa-bars"></i>
+                </button>
+              </div>
+              <nav class="nav_bar">
+                <h3>Software y Servicios</h3>
+                <ul class="list_navbar">
+                  <li><a href="#nosotros">Nosotros</a></li>
+                  <li><a href="#talentos">Talentos</a></li>
+                  <li><a href="#testimonials">Opiniones</a></li>
+                  <li><a href="#productos">Productos</a></li>
+                </ul>
+              </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+      <section class="section_img" title="Foto de Ramón Salinero en Unsplash">
+        <div class="section_content">
+          <span>Sobre</span>
+          <h2>Nosotros</h2>
+          <p>
+            Somos una empresa líder en la venta de productos tecnológicos de última generación.
+            Enfocados en brindar soluciones de calidad a las necesidades tecnológicas de nuestros clientes.
+          </p>
+        </div>
+      </section>
+      <div class="info">
+        <div class="info_content">
+          <h2 id="nosotros">Retos</h2>
+          <p>
+            Resolvemos la complejidad de la elección tecnológica al ofrecer una selección confiable y de calidad, 
+            brindando a los clientes la claridad y confianza que necesitan en sus compras de productos tecnológicos.
+          </p>
+        </div>
+      </div>
+      <section class="section_services">
+        <div class="service_content">
+          <div class="service_content_description">
+            <h3>Selección Cuidadosa</h3>
+            <p>
+              Nuestra empresa se distingue por ofrecer una selección cuidadosamente curada de productos tecnológicos,
+              asegurando que cada artículo cumpla con altos estándares de calidad y funcionalidad.
+            </p>
+          </div>
+          <div class="service_content_img">
+            <img src="../imgs/seleccion_cuidadosa.jpg" alt="security_img" loading="lazy">
+          </div>
+        </div>
+        <div class="service_content">
+          <div class="service_content_img">
+            <img src="../imgs/asesoramiento_personalizado.png" alt="security_img" loading="lazy">
+          </div>
+          <div class="service_content_description">
+            <h3>Asesoramiento Personalizado</h3>
+            <p>
+              Proporcionamos orientación experta y asesoramiento personalizado a nuestros clientes, ayudándoles a encontrar los productos que mejor 
+              se ajusten a sus necesidades individuales y preferencias.
+            </p>
+          </div>
+        </div>
+        <div class="service_content">
+          <div class="service_content_description">
+            <h3>Servicio al Cliente Excepcional</h3>
+            <p>
+              Valoramos la satisfacción de nuestros clientes por encima de todo. Nuestro equipo de servicio al cliente dedicado se esfuerza por brindar una experiencia excepcional, respondiendo a consultas,
+              resolviendo problemas y garantizando una experiencia de compra sin complicaciones.
+            </p>
+          </div>
+          <div class="service_content_img">
+            <img src="../imgs/servicio_cliente.jpg" alt="security_img" loading="lazy">
+          </div>
+        </div>
+        <div class="service_content">
+          <div class="service_content_img">
+            <img src="../imgs/innovacion_constante.png" alt="security_img" loading="lazy">
+          </div>
+          <div class="service_content_description">
+            <h3>Innovación Constante</h3>
+            <p>
+              Nos mantenemos al tanto de las últimas tendencias tecnológicas y productos innovadores, asegurando que nuestra oferta
+              esté siempre actualizada con las soluciones más avanzadas disponibles en el mercado.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="services_talents">
+        <div class="title_talent">
+          <span id="talentos">Talentos</span>
+        </div>
+        <div class="services_talents_types">
+          <div class="card_service_talent_type">
+            <div class="container_title_card">
+              <h4><i class="fa-solid fa-city"></i>Renzo Valentin</h4>
+            </div>
+            <div class="container_description_card">
+              <span><strong>Asesor en Ventas Electrónicas:</strong>
+                Guía apasionada hacia productos ideales.</span>
+            </div>
+          </div>
+          <div class="card_service_talent_type">
+            <div class="container_title_card">
+              <h4><i class="fa-solid fa-city"></i>Joe Miranda</h4>
+            </div>
+            <div class="container_description_card">
+              <span><strong>Experto en Soporte Técnico:</strong>
+                Soluciones sólidas, confianza construida.</span>
+            </div>
+          </div>
+          <div class="card_service_talent_type">
+            <div class="container_title_card">
+              <h4><i class="fa-solid fa-city"></i>Christhoper Minchola</h4>
+            </div>
+            <div class="container_description_card">
+              <span><strong>Estratega de Marketing Digital:</strong>
+                Campañas digitales que cautivan y convierten.</span>
+            </div>
+          </div>
+          <div class="card_service_talent_type">
+            <div class="container_title_card">
+              <h4><i class="fa-solid fa-city"></i>Jesus Padilla</h4>
+            </div>
+            <div class="container_description_card">
+              <span><strong>Analista de Mercado Electrónico:</strong>
+                Datos que dirigen, oportunidades descubiertas.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="centered-h4" id="productos">Nuestros Productos</h4>
+<div class="wrapper">
+	<div class="card">
+		<div class="poster"><img src="../imgs/pc.jpg" alt="Location Unknown"></div>
+		<div class="details">
+			<h1>Computadoras de escritorio</h1>
+			<p class="desc">
+        Un equilibrio excepcional entre potencia y portabilidad.
+			</p>
+			<div class="cast">
+				<h3>Marcas</h3>
+				<ul>
+					<li><img src="../imgs/amd.jpg" alt="AMD"></li>
+					<li><img src="../imgs/intel.jpg" alt="Intel"></li>
+				
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<div class="poster"><img src="../imgs/perifericos.jpg" alt="Location Unknown"></div>
+		<div class="details">
+			<h1>Perifericos</h1>
+			<p class="desc">
+        Si buscas rendimiento y versatilidad.
+			</p>
+			<div class="cast">
+				<h3>Marcas</h3>
+				<ul>
+					<li><img src="../imgs/logitech.jpg"></li>
+					<li><img src="../imgs/raze.jpg"></li>
+          <li><img src="../imgs/corsair.jpg"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<div class="poster"><img src="../imgs/laptop.jpg" alt="Location Unknown"></div>
+		<div class="details">
+			<h1>Laptops</h1>
+			<p class="desc">
+				Diseñados para mejorar tu experiencia informática.
+			</p>
+			<div class="cast">
+				<h3>Marcas</h3>
+				<ul>
+					<li><img src="../imgs/asus.jpg"></li>
+					<li><img src="../imgs/hp.jpg"></li>
+          <li><img src="../imgs/lenovo.jpg"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+      <section id="testimonials" class="testimonials-section">
+        <div class="testimonials-container">
+          <h2 class="testimonials-title">Opiniones de Clientes</h2>
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>"Increíble atención al cliente y productos de alta calidad. ¡Definitivamente recomendaré esta empresa a mis amigos y familiares!"</p>
+            </div>
+            <div class="testimonial-author">
+              <p><strong>María Rodríguez</strong><br>Cliente Satisfecha</p>
+            </div>
+          </div>
+          
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>"El soporte técnico fue excepcional. Solucionaron mi problema en cuestión de minutos. ¡Gracias por la rápida ayuda!"</p>
+            </div>
+            <div class="testimonial-author">
+              <p><strong>Juan Pérez</strong><br>Cliente Contento</p>
+            </div>
+          </div>
+          
+          <!-- Agrega más testimonios aquí -->
+          
+        </div>
+      </section>
+      <div class="contact_with_us">
+        <span>Contacta con nosotros</span>
+        <button class="open_contact_form_down">Abrir Formulario</button>
+      </div>
+
+    </main>
+    <footer>
+      <div class="footer_container_copyright">
+        <span>© 2023 Todos los derechos reservados.</span>
+      </div>
+    </footer>
+
+    <!-- -----------------------Form_Contact_Us------------------------------->
+    <div class="container_background_shadow" style="display: none;">
+      <section class="form_contact_us" >
+        <button class="close_form_contact_us"><i class="fa-solid fa-circle-xmark"></i></button>
+      <h4>Contáctanos</h4>
+        <form action="" class="form_cu">
+          <div class="container_inputs_names">
+            <div class="container_names">
+              <label for="name">Nombre</label>
+              <input type="text" name="name" id="name" placeholder="Nombre" required>
+            </div>
+            <div class="container_names">
+              <label for="lastname">Apellido</label>
+              <input type="text" name="lastname" id="lastname" placeholder="Apellido" required>
+            </div>
+          </div>
+          <div class="container_input_email">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" name="email" id="email" placeholder="Correo Electrónico" required>
+          </div>
+          <div class="container_inputs_cp">
+            <div>
+              <label for="compania">Compañía</label>
+              <input type="text" name="compania" id="compania" placeholder="Compañía" required>
+            </div>
+            <div>
+              <label for="tel">Teléfono</label>
+              <input type="text" name="phone" id="phone" placeholder="Teléfono (Opcional)">
+            </div>
+          </div>
+          <div class="container_textarea_message">
+            <label for="message">Mensaje</label>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje" required></textarea>
+          </div>
+          <div class="container_input_checkbox">
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <label for="checkbox">Acepto los <a href="#">términos y condiciones</a></label>
+          </div>
+          <div class="container_button_send">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <!-- -----------------------Form_Contact_Us------------------------------->
+    <script src="../js/interaccion.js"></script>
+
+
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "cc17df51-345e-4145-8aa8-8ec94912358b", // The ID of this integration.
+        region: "us-east", // The region your integration is hosted in.
+        serviceInstanceID: "c6d934bf-d9f9-42e1-b105-9ed7ffaf30e0", // The ID of your service instance.
+        onLoad: function(instance) { instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+</body>
+</html>
